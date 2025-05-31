@@ -1,0 +1,200 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>E-Laundry | management</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
+    <link rel="stylesheet" href="{% static 'CSS/NCSS.css'%}">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+
+    <style>
+        /* Custom styles to add padding and ensure header is fixed */
+        body {
+            padding-top: 100px; /* Adjust according to header height */
+        }
+        .header-area {
+            background-color: #ffffff; /* Set background color for the fixed header */
+            box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1); /* Optional shadow for header */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky navbar navbar-expand-lg fixed-top">
+                <!-- Logo -->
+                <div class="header-left">
+                    <div class="logo">
+                        <a href="home.html"><img src="{% static 'img/logo/logo.png'%}" alt=""></a>
+                    </div>
+                    <div class="menu-wrapper d-flex align-items-center">
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav> 
+                                <ul id="navigation" class="navbar-nav mr-auto">                                                                                          
+                                    <li class="nav-item active"><a class="nav-link" href="{% url 'home'%}">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'about'%}">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'service'%}">Services</a></li>
+                                    
+                                        <ul class="submenu">
+                                            <li><a href="{% url 'Admin'%}">Admin</a></li>
+                                            <li><a href="{% url 'sign_up_or_sign_in'%}">User</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right d-none d-lg-block">
+                    <a href="#" class="header-btn1"><img src="{% static 'img/icon/call.png' %}" alt=""> (+251) 9 43 03 23 43</a>
+                   <a href="{% url 'sign_up_or_sign_in' %}" class="btn white-btn" id="loginBtn">Sign In</a>
+                </div>  
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+
+    <!-- Your page content goes here -->
+    <div class="form-box">
+        <!-- Sign In Form -->
+        <div class="login-container" id="login">
+            <div class="top">
+                <span>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></span>
+                <h2>Login</h2>
+            </div>
+            <form method="POST">
+    {% csrf_token %}
+    <div class="input-box">
+        <input type="text" class="input-field" name="username" placeholder="Username or Email">
+    </div>
+    <div class="input-box">
+        <input type="password" class="input-field" name="password" placeholder="Password">
+    </div>
+    <div class="input-box">
+        <input type="submit" class="submit" name="action" value="Sign In">
+    </div>
+</form>
+ </div>
+
+        <!-- Registration Form -->
+        <div class="register-container" id="register" style="display: none;">
+            <div class="top">
+                <span>Have an account? <a href="#" onclick="showSignIn()">Login</a></span>
+                <h2>Sign Up</h2> <!-- Moved here -->
+            </div>
+            <form method="POST">
+    {% csrf_token %}
+    <div class="two-forms">
+        <div class="input-box">
+            <input type="text" class="input-field" name="firstname" placeholder="Firstname">
+        </div>
+        <div class="input-box">
+            <input type="text" class="input-field" name="lastname" placeholder="Lastname">
+        </div>
+    </div>
+    <div class="input-box">
+        <input type="text" class="input-field" name="email" placeholder="Email">
+    </div>
+    <div class="input-box">
+        <input type="tel" class="input-field" name="phone" placeholder="Phone Number">
+    </div>
+    <div class="input-box">
+        <input type="password" class="input-field" name="password" placeholder="Password">
+    </div>
+    <div class="input-box">
+        <input type="submit" class="submit" name="action" value="Register">
+    </div>
+</form>
+        </div>
+    </div>
+
+   <!-- Footer Start-->
+   <div class="footer-area footer-padding">
+    <div class="container">
+        <div class="row d-flex justify-content-between">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+             <div class="single-footer-caption mb-50">
+               <div class="single-footer-caption mb-30">
+                <!-- logo -->
+                <div class="footer-logo mb-35">
+                    <a href="home.html"><img src="static/img/logo/logo2_footer.png" alt=""></a>
+                </div>
+                <div class="footer-tittle">
+                    <div class="footer-pera">
+                        <p>We handle the washing, folding, and delivery, so you can enjoy your free time.</p>
+                    </div>
+                </div>
+                <!-- social -->
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+        <div class="single-footer-caption mb-50">
+            <div class="footer-tittle">
+                <h4>Services </h4>
+                <ul>
+                    <li><a href="#"> Dry Cleaning</a></li>
+                    <li><a href="#"> Dry Clean</a></li>
+                    <li><a href="#"> Ironing Services</a></li>
+                    <li><a href="#"> Laundry Service</a></li>
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+        <div class="single-footer-caption mb-50">
+            <div class="footer-tittle">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li class="number"><a href="#">(+251) 9 43 03 23 43</a></li>
+                    <li><a href="#">E- l</a></li>
+                    <li><a href="#">1000/A, Zewuditu road NYC-9089</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- footer-bottom area -->
+
+<div class="container">
+<div class="footer-border">
+   <div class="row d-flex align-items-center">
+       <div class="col-xl-12 ">
+           <div class="footer-copy-right text-center">
+               <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Footer End-->
+</footer>
+
+</body>
+</html>
+<script src="{% static 'JS/auth.js' %}"></script>

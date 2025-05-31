@@ -1,0 +1,251 @@
+{% load static%}
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>E-Laundry | management</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="{% static 'site.webmanifest' %} %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico'%}">
+    <link rel="stylesheet" href="{% static 'CSS/NCSS.css' %}">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/flaticon.css' %}">  
+    <link rel="stylesheet" href="{% static 'CSS/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/style.css'%}">
+</head>
+<body>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <!-- Logo -->
+                <div class="header-left">
+                    <div class="logo">
+                        <a href="home.html"><img src="{% static 'img/logo/logo.png'%}" alt=""></a>
+                    </div>
+                    <div class="menu-wrapper d-flex align-items-center">
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav> 
+                                <ul id="navigation">                                                                                          
+                                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'about'%}">About</a></li>
+                                    <li><a href="{% url 'service'%}">Services</a></li>
+                                    <li><a href="blog.html">Blog</a>
+                                        <ul class="submenu">
+                                            <li><a href="{% url 'Admin'%}">Admin</a></li>
+                                            <li><a href="{% url 'sign_up_or_sign_in'%}">User</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right d-none d-lg-block">
+                   <a href="#" class="header-btn1"><img src="{% static 'img/icon/call.png' %}" alt=""> (+251) 9 43 03 23 43</a>
+                    <a href="{% url 'sign_up_or_sign_in' %}" class="btn white-btn" id="loginBtn">Sign In</a>
+                </div>
+
+                
+            </div>
+        </div>
+        <!-- Header End --->
+    </header>
+    <!--? About Area  -->
+        <section class="about-area2 pb-bottom mt-30">
+        <div class="container">
+            <h1>Our Company History </h1>
+            <p>Established in 2016 E.C., E Laundry was founded by Ermias Mazengia with a clear 
+                        mission: to bring professional, reliable, and affordable laundry services to the 
+                        heart of the community. What began as a modest laundry shop has grown into a 
+                        respected and trusted name in the industry. </p>
+            <p>Mr. Ermias Mazengia started E Laundry with just a few machines, a small team, and a big 
+                vision to simplify people’s lives by taking the hassle out of laundry. With dedication 
+                to cleanliness, customer care, and attention to every detail, E Laundry quickly built a 
+                loyal customer base. </p>
+
+            <p> As the demand for modern and convenient laundry services increased, E Laundry expanded 
+                its offerings, including:</p>
+            
+           <ul class="service-list">
+           <li><input type="checkbox" name="wash_fold" checked> Wash and fold</li>
+           <li><input type="checkbox" name="dry_cleaning"> Dry cleaning</li>
+           <li><input type="checkbox" name="ironing_pressing"> Ironing and pressing</li>
+           <li><input type="checkbox" name="stain_removal"> Stain removal and fabric care</li>
+           <li><input type="checkbox" name="pickup_delivery" checked> Pickup and delivery services</li>
+           <li><input type="checkbox" name="commercial_laundry"> Commercial laundry for hotels, restaurants, and clinics</li>
+           </ul>
+
+           <p> From day one, we have focused on providing high-quality service with a personal touch. 
+            Over the years, we have invested in modern laundry equipment, eco-friendly practices, and staff
+             training to maintain the highest standards in the business.</p>
+            <p>
+            Today, E Laundry proudly serves individuals, families, and businesses across Addis Ababa, 
+            making laundry easier, faster, and more reliable than ever. As we continue to grow, our 
+            commitment remains the same: clean clothes, happy customers, and a cleaner future.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <!-- about-img -->
+                    <div class="about-img ">
+                        <img src="{% static 'img/gallery/about1.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="about-caption mb-50">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle mb-25">
+                            <h2>About company</h2>
+                        </div>
+                        <p class="mb-20">
+                            The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!
+                        </p>
+                        <p class="mb-30">Our advanced system ensures that your garments are cleaned and refreshed with utmost precision and care.</p>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+        
+    </section>
+    <!-- About Area End -->
+       
+    </main>
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                     <div class="single-footer-caption mb-50">
+                       <div class="single-footer-caption mb-30">
+                        <!-- logo -->
+                        <div class="footer-logo mb-35">
+                            <a href="home.html"><img src="static/img/logo/logo2_footer.png" alt=""></a>
+                        </div>
+                        <div class="footer-tittle">
+                            <div class="footer-pera">
+                                <p>We handle the washing, folding, and delivery, so you can enjoy your free time.</p>
+                            </div>
+                        </div>
+                        <!-- social -->
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                <div class="single-footer-caption mb-50">
+                    <div class="footer-tittle">
+                        <h4>Services </h4>
+                        <ul>
+                            <li><a href="#"> Dry Cleaning</a></li>
+                            <li><a href="#"> Ironing Services</a></li>
+                            <li><a href="#"> Laundry Service</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                <div class="single-footer-caption mb-50">
+                    <div class="footer-tittle">
+                        <h4>Get in touch</h4>
+                        <ul>
+                            <li class="number"><a href="#">(+251) 9 43 03 23 43</a></li>
+                            <li><a href="#"><E-Laundery></E-Laundery></a></li>
+                            <li><a href="#">1000/A, Zewuditu road NYC-9089</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer-bottom area -->
+
+    <div class="container">
+        <div class="footer-border">
+           <div class="row d-flex align-items-center">
+               <div class="col-xl-12 ">
+                   <div class="footer-copy-right text-center">
+                       <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                          
+                          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+</div>  
+</div>
+
+  <!-- Footer End-->
+</footer>
+<!-- Scroll Up -->
+<div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+<script src="assets/js/index.js"></script>
+
+<script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="./assets/js/popper.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<!-- Jquery Mobile Menu -->
+<script src="./assets/js/jquery.slicknav.min.js"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="./assets/js/owl.carousel.min.js"></script>
+<script src="./assets/js/slick.min.js"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="./assets/js/wow.min.js"></script>
+<script src="./assets/js/animated.headline.js"></script>
+<script src="./assets/js/jquery.magnific-popup.js"></script>
+
+<!-- Date Picker -->
+<script src="./assets/js/gijgo.min.js"></script>
+<!-- Nice-select, sticky -->
+<script src="./assets/js/jquery.nice-select.min.js"></script>
+<script src="./assets/js/jquery.sticky.js"></script>
+<!-- Progress -->
+<script src="./assets/js/jquery.barfiller.js"></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="./assets/js/jquery.counterup.min.js"></script>
+<script src="./assets/js/waypoints.min.js"></script>
+<script src="./assets/js/jquery.countdown.min.js"></script>
+<script src="./assets/js/hover-direction-snake.min.js"></script>
+
+<!-- contact js -->
+<script src="./assets/js/contact.js"></script>
+<script src="./assets/js/jquery.form.js"></script>
+<script src="./assets/js/jquery.validate.min.js"></script>
+<script src="./assets/js/mail-script.js"></script>
+<script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+
+<!-- Jquery Plugins, main Jquery -->	
+<script src="./assets/js/plugins.js"></script>
+<script src="./assets/js/main.js"></script>
+
+</body>
+</html>

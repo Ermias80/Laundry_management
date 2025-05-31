@@ -1,0 +1,210 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Order</title>
+   <link rel="stylesheet" href="{% static 'CSS/order_page.css' %}">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/flaticon.css' %}">  
+    <link rel="stylesheet" href="{% static 'CSS/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/style.css'%}">
+</head>
+<body>
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <!-- Logo -->
+                <div class="header-left">
+                    <div class="logo">
+                        <a href="home.html"><img src="{% static 'img/logo/logo.png'%}" alt="Company Logo"></a>
+                    </div>
+                    <div class="menu-wrapper d-flex align-items-center">
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li class="nav-item active"><a class="nav-link" href="{% url 'home'%}">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'about'%}">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'service'%}">Services</a></li
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right d-none d-lg-block">
+                     <a href="#" class="header-btn1"><img src="{% static 'img/icon/call.png' %}" alt=""> (+251) 9 43 03 23 43</a>
+                        <a href="/logout">Logout</a> 
+                </div>
+            </div>
+        </div>
+        <div class="header-right d-flex align-items-center">
+                <span class="welcome-text mx-3">Welcome, {{ user.get_full_name }}  order your service now</span>
+                
+            </div>
+        
+    </header>
+
+<main>
+ <h2>Choose Your Order</h2>
+
+    <div class="order-container">
+        <!-- Order Form -->
+        <section id="order-form">
+            <h3>Place Your Order</h3>
+            <form method="POST" action="{% url 'add_to_cart' %}">
+                {% csrf_token %}
+                <label for="service">Select Service:</label>
+                <select id="service" name="service" required>
+                    <option value="">-- Select a Service --</option>
+                    {% for service in services %}
+                        <option value="{{ service.id }}">{{ service.name }} - ${{ service.price }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+
+                <div class="button-group">
+                    <button type="submit" name="place_order">Place Order</button>
+                    <button type="button" id="clear-cart" class="btn btn-danger">Clear Orders</button>
+                </div>
+            </form>
+        </section>
+   
+<!-- Order display board -->
+<section id="order-display">
+    <h3>Order Summary</h3>
+    {% if orders %}
+        <table class="order-summary-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                 <tr>
+                     <td>{{ order.service.name }}</td>
+                      <td>{{ order.quantity }}</td>
+                      <td>${{ order.service.price }}</td>
+                      <!-- Add this missing column for subtotal -->
+                       <td>${{ order.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                    <td><strong>${{ total }}</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    {% else %}
+        <p>No orders placed yet.</p>
+    {% endif %}
+</section>
+</div>
+
+<!-- Update Proceed to Payment button -->
+{% if orders %}
+    <div class="proceed-payment">
+        <a href="{% url 'payment' %}" class="btn btn-primary">Proceed to Payment</a>
+    </div>
+{% endif %}
+        
+    </main>
+
+    <footer>
+         <!-- Footer Start-->
+         <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                     <div class="single-footer-caption mb-50">
+                       <div class="single-footer-caption mb-30">
+                        <!-- logo -->
+                        <div class="footer-logo mb-35">
+                            <a href="home.html"><img src="static/img/logo/logo2_footer.png" alt=""></a>
+                        </div>
+                        <div class="footer-tittle">
+                            <div class="footer-pera">
+                                <p>We handle the washing, folding, and delivery, so you can enjoy your free time.</p>
+                            </div>
+                        </div>
+                        <!-- social -->
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                <div class="single-footer-caption mb-50">
+                    <div class="footer-tittle">
+                        <h4>Services </h4>
+                        <ul>
+                            <li><a href="#"> Dry Cleaning</a></li>
+                            <li><a href="#"> Ironing Services</a></li>
+                            <li><a href="#"> Laundry Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                <div class="single-footer-caption mb-50">
+                    <div class="footer-tittle">
+                        <h4>Get in touch</h4>
+                        <ul>
+                            <li class="number"><a href="#">(+251) 9 43 03 23 43</a></li>
+                            <li><a href="#">E-Laundery</a></li>
+                            <li><a href="#">1000/A, Zewuditu road NYC-9089</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer-bottom area -->
+    <div class="container">
+        <div class="footer-border">
+           <div class="row d-flex align-items-center">
+               <div class="col-xl-12 ">
+                   <div class="footer-copy-right text-center">
+                       <p>
+                          
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</footer>
+
+<script>
+document.getElementById('clear-cart').addEventListener('click', function() {
+    // Use the new URL name
+    fetch("{% url 'clear_cart' %}", {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}',
+            'Content-Type': 'application/json'
+        }
+    }).then(() => window.location.reload());
+});
+</script>
+</body>
+</html>

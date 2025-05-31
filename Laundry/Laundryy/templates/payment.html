@@ -1,0 +1,192 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Order</title>
+   <link rel="stylesheet" href="{% static 'CSS/order_page.css' %}">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/flaticon.css' %}">  
+    <link rel="stylesheet" href="{% static 'CSS/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/style.css'%}">
+</head>
+<body>
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <!-- Logo -->
+                <div class="header-left">
+                    <div class="logo">
+                        <a href="home.html"><img src="{% static 'img/logo/logo.png'%}" alt="Company Logo"></a>
+                    </div>
+                    <div class="menu-wrapper d-flex align-items-center">
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li class="nav-item active"><a class="nav-link" href="{% url 'home'%}">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'about'%}">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'service'%}">Services</a></li
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right d-none d-lg-block">
+                     <a href="#" class="header-btn1"><img src="{% static 'img/icon/call.png' %}" alt=""> (+251) 9 43 03 23 43</a>
+                        <a href="/logout">Logout</a> 
+                </div>
+            </div>
+        </div>
+        <div class="header-right d-flex align-items-center">
+                <span class="welcome-text mx-3">Welcome, {{ user.get_full_name }}  order your service now</span>
+                
+            </div>
+        
+    </header>
+<main>
+        <h2>Payment</h2>
+        
+        <!-- Order Summary -->
+        <section id="order-summary">
+            <h3>Order Summary</h3>
+            {% if cart_items %}
+                <table class="order-summary-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in cart_items %}
+                            <tr>
+                                <td>{{ item.service.name }}</td>
+                                <td>{{ item.quantity }}</td>
+                                <td>${{ item.service.price }}</td>
+                                <td>${{ item.total }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                            <td><strong>${{ total }}</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            {% else %}
+                <p>Your cart is empty.</p>
+            {% endif %}
+        </section>
+
+        <!-- Payment Form -->
+        <section id="payment-form">
+            <h3>Payment Details</h3>
+            <form method="POST" action="{% url 'payment' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="">-- Select Payment Method --</option>
+                        <option value="credit-card">Credit Card</option>
+                        <option value="telebirr">TeleBirr</option>
+                        <option value="cash">Cash on Delivery</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="transaction-id-group" style="display: none;">
+                    <label for="transaction_id">Transaction ID:</label>
+                    <input type="text" id="transaction_id" name="transaction_id">
+                </div>
+
+                <button type="submit" class="btn-pay">Complete Payment</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+         <!-- Footer Start-->
+         <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                     <div class="single-footer-caption mb-50">
+                       <div class="single-footer-caption mb-30">
+                        <!-- logo -->
+                        <div class="footer-logo mb-35">
+                            <a href="home.html"><img src="static/img/logo/logo2_footer.png" alt=""></a>
+                        </div>
+                        <div class="footer-tittle">
+                            <div class="footer-pera">
+                                <p>We handle the washing, folding, and delivery, so you can enjoy your free time.</p>
+                            </div>
+                        </div>
+                        <!-- social -->
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                <div class="single-footer-caption mb-50">
+                    <div class="footer-tittle">
+                        <h4>Services </h4>
+                        <ul>
+                            <li><a href="#"> Dry Cleaning</a></li>
+                            <li><a href="#"> Ironing Services</a></li>
+                            <li><a href="#"> Laundry Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                <div class="single-footer-caption mb-50">
+                    <div class="footer-tittle">
+                        <h4>Get in touch</h4>
+                        <ul>
+                            <li class="number"><a href="#">(+251) 9 43 03 23 43</a></li>
+                            <li><a href="#">E-Laundery</a></li>
+                            <li><a href="#">1000/A, Zewuditu road NYC-9089</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer-bottom area -->
+    <div class="container">
+        <div class="footer-border">
+           <div class="row d-flex align-items-center">
+               <div class="col-xl-12 ">
+                   <div class="footer-copy-right text-center">
+                       <p>
+                          
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</footer>
+ <script>
+        // Show transaction ID field only for non-cash payments
+        document.getElementById('payment-method').addEventListener('change', function() {
+            const transactionGroup = document.getElementById('transaction-id-group');
+            transactionGroup.style.display = this.value === 'cash' ? 'none' : 'block';
+        });
+    </script> 
+</body>
+</html>
