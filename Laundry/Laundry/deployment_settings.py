@@ -30,7 +30,7 @@ STORAGES = {
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ['postgresql://laundry_s6aq_user:QAq4MNwi4Er8oDGkBtncjhJe2ddfRT1E@dpg-d0vk71p5pdvs738jvhsg-a/laundry_s6aq'],
+        default=os.environ['DATABASE_URL'],
         conn_max_age=600
     )
 }
