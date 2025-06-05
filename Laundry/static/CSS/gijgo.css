@@ -391,7 +391,6 @@ ul.gj-list-md li.disabled>[data-role="wrapper"]>[data-role="display"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'gijgo-material' !important;
     font-size: 24px;
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -714,7 +713,6 @@ ul.gj-list-md li.disabled>[data-role="wrapper"]>[data-role="display"] {
 }
 
 .gj-dialog-md-close {
-    -webkit-appearance: none;
     padding: 0;
     cursor: pointer;
     background: 0 0;
@@ -2045,7 +2043,7 @@ ul.gj-list-md li.disabled > [data-role="wrapper"] > [data-role="expander"] {
     line-height: 40px;
     font-size: 13px;
     text-align: center;
-    vertical-align: middle;
+    
 }
 
 [type="year"].gj-picker-md table tr td div,
@@ -2143,7 +2141,7 @@ ul.gj-list-md li.disabled > [data-role="wrapper"] > [data-role="expander"] {
     height: 30px;
     line-height: 30px;
     text-align: center;
-    vertical-align: middle;
+    
 }
 
 [type="year"].gj-picker-bootstrap table tr td div,
