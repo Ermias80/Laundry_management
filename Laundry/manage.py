@@ -7,10 +7,12 @@ import sys
 def main():
     """Run administrative tasks."""
     settings_module = (
-    'Laundry.deployment_Settings'
-    if 'RENDER_EXTERNAL_HOSTNAME' in os.environ
-    else 'Laundry.settings'
+        'Laundry.deployment_Settings'
+        if 'RENDER_EXTERNAL_HOSTNAME' in os.environ
+        else 'Laundry.settings'
     )
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)  # ← Add this line
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
