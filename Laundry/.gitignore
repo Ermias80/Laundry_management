@@ -10,3 +10,5 @@ __pycache__/
 # Ignore VSCode or PyCharm configs (if using)
 .vscode/
 .idea/
+db.sqlite3
+.env
