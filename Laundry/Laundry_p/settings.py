@@ -58,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Laundry.wsgi.application'
+WSGI_APPLICATION = 'Laundry_p.wsgi.application'
 
 
 # Database
