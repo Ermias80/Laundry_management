@@ -5,7 +5,7 @@ from .settings import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = False
+DEBUG = True
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
 
