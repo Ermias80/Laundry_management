@@ -74,7 +74,7 @@
                 <span>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></span>
                 <h2>Login</h2>
             </div>
-            <form method="POST">
+            <form method="POST" action="{% url 'sign_up_or_sign_in' %}">
     {% csrf_token %}
     <div class="input-box">
         <input type="text" class="input-field" name="username" placeholder="Username or Email">
@@ -94,7 +94,7 @@
                 <span>Have an account? <a href="#" onclick="showSignIn()">Login</a></span>
                 <h2>Sign Up</h2> <!-- Moved here -->
             </div>
-            <form method="POST">
+            <form method="POST" action="{% url 'sign_up_or_sign_in' %}">
     {% csrf_token %}
     <div class="two-forms">
         <div class="input-box">
