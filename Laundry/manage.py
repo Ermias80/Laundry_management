@@ -10,7 +10,7 @@ def main():
         if 'RENDER_EXTERNAL_HOSTNAME' in os.environ
         else 'Laundry_p.settings'
     )
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Laundry_p.settings')
 
     try:
         from django.core.management import execute_from_command_line

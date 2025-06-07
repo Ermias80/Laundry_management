@@ -15,6 +15,6 @@ settings_module = (
     if 'RENDER_EXTERNAL_HOSTNAME' in os.environ
     else 'Laundry_p.settings'
 )
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings_module')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Laundry_p.settings')
 
 application = get_asgi_application()
