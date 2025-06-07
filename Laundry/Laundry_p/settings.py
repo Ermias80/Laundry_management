@@ -41,7 +41,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Laundry.urls'
+ROOT_URLCONF = 'Laundry_p.urls'
 
 TEMPLATES = [
     {

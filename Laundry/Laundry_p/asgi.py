@@ -11,9 +11,9 @@ import os
 
 from django.core.asgi import get_asgi_application
 settings_module = (
-    'Laundry.deployment_Settings'
+    'Laundry_p.deployment_Settings'
     if 'RENDER_EXTERNAL_HOSTNAME' in os.environ
-    else 'Laundry.settings'
+    else 'Laundry_p.settings'
 )
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings_module')
 

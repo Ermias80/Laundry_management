@@ -3,15 +3,14 @@
 import os
 import sys
 
-
 def main():
     """Run administrative tasks."""
     settings_module = (
-        'Laundry.deployment_Settings'
+        'Laundry_p.deployment_Settings'
         if 'RENDER_EXTERNAL_HOSTNAME' in os.environ
-        else 'Laundry.settings'
+        else 'Laundry_p.settings'
     )
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)  # ← Add this line
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
     try:
         from django.core.management import execute_from_command_line
@@ -22,7 +21,6 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
-
 
 if __name__ == '__main__':
     main()
