@@ -10,3 +10,4 @@ services:
     envVars:
       - key: DATABASE_URL
         value: postgresql://laundry_s6aq_user:QAq4MNwi4Er8oDGkBtncjhJe2ddfRT1E@dpg-d0vk71p5pdvs738jvhsg-a/laundry_s6aq
+staticPublishPath: staticfiles
