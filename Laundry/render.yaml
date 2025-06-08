@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: laundry-management
+    name: laundryy
     env: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn Laundry_p.wsgi"
