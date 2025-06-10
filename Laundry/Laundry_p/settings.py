@@ -117,5 +117,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-ALLOWED_HOSTS = ['laundry-management-62sq.onrender.com']
-CSRF_TRUSTED_ORIGINS = ['https://laundry-management-62sq.onrender.com']
+

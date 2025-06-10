@@ -1,3 +1,27 @@
+/* More vertical space for the header */
+.header-area .main-header {
+    padding: 20px 40px;  /* Increase top/bottom and left/right space */
+    min-height: 100px;   /* Adjust based on how tall you want it */
+    align-items: center; /* Vertically align items */
+}
+
+/* Optional: Increase logo size slightly */
+.logo img {
+    max-width: 220px;  /* Increase size if needed */
+    height: auto;
+}
+
+/* Optional: Add spacing between menu items */
+#navigation li {
+    margin: 0 20px;
+}
+
+/* Optional: Adjust menu font size */
+#navigation li a {
+    font-size: 18px;
+    font-weight: 600;
+}
+
 /* Header and Navigation */
 header {
     
@@ -156,73 +180,6 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Slider Area */
-.slider-area {
-    
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(
-            rgba(0, 0, 0, 0.4), 
-            rgba(0, 0, 0, 0.4)
-        ), 
-        url('/assets/img/gallery/L1.jpg') no-repeat center center/cover;
-    overflow: hidden;
-}
-
-.hero-overly {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.slider-active {
-    position: relative;
-    height: 100%;
-}
-
-.single-slider {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.hero__caption {
-    color: #fff;
-    text-align: left;
-    max-width: 600px;
-}
-
-.hero__caption h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 1.2;
-    animation: fadeInLeft 1s ease-in-out;
-}
-
-.hero__caption p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #ddd;
-    animation: fadeInLeft 1.5s ease-in-out;
-}
-
-.hero-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    background-color: #ff6b6b;
-    border: none;
-    border-radius: 50px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-    animation: fadeInLeft 2s ease-in-out;
-}
-
-.hero-btn:hover {
-    background-color: #ff4747;
-}
 
 /* Animations */
 @keyframes fadeInLeft {
@@ -236,21 +193,6 @@ body {
     }
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .hero__caption h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero__caption p {
-        font-size: 1rem;
-    }
-
-    .hero-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-}
 
 @media (max-width: 576px) {
     .hero__caption h1 {
@@ -266,43 +208,6 @@ body {
         font-size: 0.8rem;
     }
 }
-
-/* Slider Height for Mobile Responsiveness */
-@media (max-width: 768px) {
-    .slider-area {
-        height: 80vh;
-    }
-
-    .hero__caption h1 {
-        font-size: 32px;
-    }
-
-    .hero__caption p {
-        font-size: 16px;
-    }
-
-    .hero__caption .hero-btn {
-        padding: 10px 25px;
-        font-size: 14px;
-    }
-}
-
-/* Fade-in Animations */
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-
-
-
-
 
 
 /* Style for centering the entire login-container */
@@ -884,4 +789,30 @@ form button:hover {
     #services-list {
         grid-template-columns: 1fr;
     }
+}
+
+#back-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999;
+  display: none; /* hidden by default */
+}
+
+#back-top a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+#back-top a:hover {
+  background-color: #555;
 }

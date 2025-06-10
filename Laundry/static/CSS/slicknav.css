@@ -6,20 +6,18 @@
 .slicknav_btn {
   position: relative;
   display: block;
-  vertical-align: middle;
-  float: right;
+   float: right;
   padding: 0.438em 0.625em 0.438em 0.625em;
   line-height: 1.125em;
-  cursor: pointer; }
-  .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
-    margin-top: 0.188em; }
+  cursor: pointer;
+}
 
-.slicknav_menu {
-  *zoom: 1; }
-  .slicknav_menu .slicknav_menutxt {
-    display: block;
-    line-height: 1.188em;
-    float: left; }
+
+.slicknav_menu .slicknav_menutxt {
+  display: block;
+  line-height: 1.188em;
+  float: left;
+}
   .slicknav_menu .slicknav_icon {
     float: left;
     width: 1.125em;
@@ -216,7 +214,10 @@
     font-weight: 400;
     color: #000;
     text-transform: capitalize;
+    display: block;
+    padding: 10px 20px; /* 🟢 Adds space inside the link */
 }
+
 
 .slicknav_nav .slicknav_arrow {
     float: right;

@@ -25,6 +25,7 @@
             box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1); /* Optional shadow for header */
         }
     </style>
+    
 </head>
 <body>
 
@@ -36,7 +37,7 @@
                 <!-- Logo -->
                 <div class="header-left">
                     <div class="logo">
-                        <a href="home.html"><img src="{% static 'img/logo/logo.png'%}" alt=""></a>
+                        <a href="javascript:void(0);"><img src="{% static 'img/logo/logo.png'%}" alt=""></a>
                     </div>
                     <div class="menu-wrapper d-flex align-items-center">
                         <!-- Main-menu -->
@@ -48,7 +49,7 @@
                                     <li class="nav-item"><a class="nav-link" href="{% url 'service'%}">Services</a></li>
                                     
                                         <ul class="submenu">
-                                            <li><a href="{% url 'Admin'%}">Admin</a></li>
+                                            <li><a href="/admin/">Admin</a></li>
                                             <li><a href="{% url 'sign_up_or_sign_in'%}">User</a></li>
                                         </ul>
                                     </li>
@@ -128,7 +129,9 @@
              <div class="single-footer-caption mb-50">
                <div class="single-footer-caption mb-30">
                 <!-- logo -->
-                
+                <div class="footer-logo mb-35">
+                    <a href="javascript:void(0);"><img src="{% static '/img/logo/logo2_footer.png' %}" alt=""></a>
+                </div>
                 <div class="footer-tittle">
                     <div class="footer-pera">
                         <p>We handle the washing, folding, and delivery, so you can enjoy your free time.</p>

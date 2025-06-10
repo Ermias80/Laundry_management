@@ -28,27 +28,31 @@
                 <!-- Logo -->
                 <div class="header-left">
                     <div class="logo">
-                        <a href="home.html"><img src="{% static 'img/logo/logo.png'%}" alt=""></a>
+                        <a href="javascript:void(0);"><img src="{% static 'img/logo/logo.png'%}" alt=""></a>
                     </div>
+
                     <div class="menu-wrapper d-flex align-items-center">
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">
                             <nav> 
                                 <ul id="navigation">                                                                                          
                                     <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                                    <li><a href="{% url 'about'%}">About</a></li>
                                     <li><a href="{% url 'service'%}">Services</a></li>
-                                    <li><a href="blog.html">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="{% url 'Admin'%}">Admin</a></li>
-                                            <li><a href="{% url 'sign_up_or_sign_in'%}">User</a></li>
+                                    <li class="has-submenu">
+                                        <a id="blogToggle">Blog</a>
+                                         <ul class="submenu">
+                                            <li><a href="/admin/">Admin</a></li>
+                                            <li><a href="{% url 'sign_up_or_sign_in' %}">User</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
+                    <!-- ✅ Mobile Menu Container -->
+                <div class="mobile_menu d-block d-lg-none"></div>
                 </div>
+                
                 <div class="header-right d-none d-lg-block">
                    <a href="#" class="header-btn1"><img src="{% static 'img/icon/call.png' %}" alt=""> (+251) 9 43 03 23 43</a>
                     <a href="{% url 'sign_up_or_sign_in' %}" class="btn white-btn" id="loginBtn">Sign In</a>
@@ -57,6 +61,7 @@
                 
             </div>
         </div>
+        
         <!-- Header End --->
     </header>
     <!--? About Area  -->
@@ -133,7 +138,7 @@
                        <div class="single-footer-caption mb-30">
                         <!-- logo -->
                         <div class="footer-logo mb-35">
-                            <a href="home.html"><img src="static/img/logo/logo2_footer.png" alt=""></a>
+                            <a href="javascript:void(0);"><img src="{% static '/img/logo/logo2_footer.png' %}" alt=""></a>
                         </div>
                         <div class="footer-tittle">
                             <div class="footer-pera">
@@ -247,6 +252,8 @@
 <!-- Jquery Plugins, main Jquery -->	
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
+<script src="{%static 'js/scrol.js'%}"></script>
+
 
 </body>
 </html>
