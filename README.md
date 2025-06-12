@@ -95,7 +95,7 @@ To run and access fullstack application:
 
 #### Visiting the Live Website
 
-* 1\. **Visit the Your Laundery management website:** [Laundery management]( "Laundery management")
+* 1\. **Visit the Your Laundery management website:** [https://laundry-management-62sq.onrender.com]( "Laundery management")
 * 2\. **Explore Lists:** You can explore listings without registration, but for more actions, proceed to step 3.
 * 3\. **Create an Account or Log In:** Create a new account or log in if you already have one.
 * 4\. **Once Logged In:** Follow the user guide and explore all the features.
@@ -120,7 +120,7 @@ We're excited to welcome contributions to the Laundery management Portfolio Proj
 * Ermias Mazengia - [Linkedin](https://www.linkedin.com/in/ermias-mazengia-0a22bb1b2?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BD10ZYT5USSWA90GaZxW8Tg%3D%3D "Linkedin")
 ### Licensing
 Your web based Laudery Managaement system Application is currently under development and not licensed for public use. 
-The web based Laudery Managaement system Test Plan aims to ensure the seamless functionality, performance, and user experience of our platform. See This [document](https://github.com/Ermias80/Laundry-Management/tree/master "document") that outlines the testing strategy, environment, schedule, and specific test cases for both server-side and client-side components.
+The web based Laudery Managaement system Test Plan aims to ensure the seamless functionality, performance, and user experience of our platform. See This [document](https://github.com/Ermias80/Laundry_management "document") that outlines the testing strategy, environment, schedule, and specific test cases for both server-side and client-side components.
 
 ### Future Development
 
